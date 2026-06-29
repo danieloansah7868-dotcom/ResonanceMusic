@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+
+  .glass-solid {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600
+           hover:from-primary-600 hover:to-primary-700 text-white font-semibold rounded-xl
+           shadow-primary transition-all duration-300 hover:shadow-primary-lg hover:scale-105
+           focus:outline-none focus:ring-4 focus:ring-primary-500/50 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white dark:bg-gray-800
+           border-2 border-primary-500 text-primary-600 dark:text-primary-400 font-semibold rounded-xl
+           hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300
+           focus:outline-none focus:ring-4 focus:ring-primary-500/50 active:scale-95;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-500
+           hover:from-gold-500 hover:to-gold-600 text-gray-900 font-semibold rounded-xl
+           shadow-gold transition-all duration-300 hover:shadow-gold-lg hover:scale-105
+           focus:outline-none focus:ring-4 focus:ring-gold-500/50 active:scale-95;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-gray-900/30
+           border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-xl hover:-translate-y-2 hover:border-primary-200 dark:hover:border-primary-700;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600
+           rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-gold-500 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  .stat-card {
+    @apply text-center p-6 rounded-2xl glass-solid;
+  }
+
+  .nav-link {
+    @apply relative text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400
+           font-medium transition-colors duration-200 after:absolute after:bottom-0 after:left-0
+           after:w-0 after:h-0.5 after:bg-gold-500 after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+
+  .nav-link-active {
+    @apply text-primary-600 dark:text-primary-400 after:w-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-on-scroll {
+    animation-play-state: paused;
+  }
+
+  .animate-on-scroll.in-view {
+    animation-play-state: running;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500/30 text-primary-900 dark:text-primary-100;
+}
+
+/* Focus visible */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-500;
+}
