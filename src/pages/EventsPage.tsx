@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users, Filter, Star, Filter } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Filter, Star } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
 const events = [
